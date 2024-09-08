@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            background-image: "img.png";
+            text-align:center;
+            color:black;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="radio" id="selfride" name="Bike" value="self ride"  />
+    <label for="self ride"> self ride</label>     &nbsp;
+    <input type="radio" id="driver" name="Car" value="driver" onclick="enabledriver()" />
+    <label for="driver">driver</label><br><br>
+    <div class="bike-show"></div>
+    <div class="car-show"></div>
+    <div class="cars-show"></div>
+    <div class="bus-show"></div>
+
+  
+        <select  disabled name="bikes" id="bikesd" >
+            <option name="Select">Select</option>
+            <option name="bike1">Bike1</option>
+            <option name="bike2">Bike2</option>
+            <option name="bike3">Bike3</option>
+            <option name="bike4">Bike4</option>
+            <option name="bike5">Bike5</option>
+        </select>&nbsp;
+    
+   
+    <select  disabled name="cars" id="carsd">
+        <option name="Select">Select</option>
+        <option name="car1">car1</option>
+        <option name="car2">car2</option>
+        <option name="car3">car3</option>
+        <option name="car4">car4</option>
+        <option name="car5">car5</option>
+    </select>
+    <script>
+        const bike=document.getElementById("selfride");
+        bike.addEventListener("click",()=>{
+            document.querySelector(".bike-show").innerHTML = `<input type="radio" id = "bike"  name="bike" value="bike" onclick="enablebike(1)">
+            <label for="bike">Bike</label><br><br>`
+        })
+        const car=document.getElementById("selfride");
+        car.addEventListener("click",()=>{
+            document.querySelector(".car-show").innerHTML = `<input type="radio" id = "car"   name="car" value=car" onclick="enablecar(2)">
+            <label for="car">Car</label><br><br>`
+        })
+        const cars =document.getElementById("driver");
+        cars.addEventListener('click',()=>{
+            document.querySelector('.cars-show').innerHTML= `
+            <input type="radio" id="cars" name="vechile" value="cars" onclick="enablecars()"/>
+            <label for="cars"> cars</label><br><br>`
+        })
+        const bus =document.getElementById("driver");
+        cars.addEventListener('click',()=>{
+            document.querySelector('.bus-show').innerHTML= `
+            <input type="radio" id="bus" name="vechile" value="bus" onclick="enablebus()"/>
+            <label for="cars"> bus</label><br><br>`
+        })
+
+        function enablebike(val){
+            if (val==0 && disabled==true ){
+                document.getElementById('bikesd').style.display='none';
+            }
+            if (val==1 && disabled==false){
+                document.getElementById('bikesd').style.display='block';
+            }
+            
+            
+        }
+          
+               
+     </script>
+</body>
+</html>
